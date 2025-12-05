@@ -56,6 +56,7 @@
 	--error-color				: rgb(230, 87, 87);
 	--default-font				: "DM Sans", serif;
 	--accent-font				: "Poppins", serif;
+	--lavender : #F4ECFC;
 }
 
 /************************************/
@@ -67,7 +68,7 @@ body{
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.1em;
-	background-color: var(--white-color);
+	background-color: var(--lavender);
 	color: var(--text-color);
 }
 
@@ -104,6 +105,19 @@ a{
 a:hover{
 	text-decoration: none;
 	outline: 0;
+}
+
+a:hover {
+    color: #88D7C0 !important;
+}
+
+.navbar-nav .nav-link.active {
+    color: #88D7C0 !important;
+}
+
+.section-title h3 {
+    border-left: 4px solid #88D7C0;
+    padding-left: 10px;
 }
 
 a:focus{
@@ -196,22 +210,31 @@ body{
 .btn-default{
 	position: relative;
 	display: inline-block;
-    background: linear-gradient(to right, var(--accent-color) 0%, var(--accent-secondary-color) 50%, var(--accent-color) 100%);
+    /* background: linear-gradient(to right, var(--accent-color) 0%, var(--accent-secondary-color) 50%, var(--accent-color) 100%); */
     background-size: 200% auto;
-    color: var(--white-color);
+    /* color: var(--white-color); */
     font-size: 16px;
     font-weight: 500;
 	line-height: 1em;
     text-transform: capitalize;
-    border: none;
+    /* border: none; */
     padding: 17px 46px 17px 16px;
     transition: all 0.4s ease-in-out;
 	overflow: hidden;
 	z-index: 0;
+	
+    background-color: #88D7C0 !important;
+    border-color: #88D7C0 !important;
+    color: #000 !important;
+
+
+
 }
 
 .btn-default:hover{
 	background-position: right center;
+    background-color: #75c7b1 !important;
+    border-color: #75c7b1 !important;
 }
 
 .btn-default::before{
@@ -532,7 +555,7 @@ body{
 
 header.main-header{
 	position: relative;
-	background-color: var(--white-color);
+	background-color: var(--lavender);
 	z-index: 100;
 }
 
@@ -986,7 +1009,7 @@ header.main-header .header-sticky.active{
 /************************************/
 
 .about-us{
-	padding: 100px 0;
+	padding: 100px 0px 0px 0px;
 }
 
 .about-us-images{
@@ -4674,6 +4697,7 @@ header.main-header .header-sticky.active{
 
 	.btn-default{
 		padding: 14px 42px 14px 14px;
+		
 	}
 
 	.btn-default::before{
@@ -6545,3 +6569,36 @@ header.main-header .header-sticky.active{
         height: 350px;
     }
 }
+
+/* CORE SERVICES – Full-width 3-column dropdown */
+.core-services-menu > ul {
+    display: none;
+    position: absolute;
+    left: -100;
+    top: 100%;
+    background: #6a3fa0; /* your purple color */
+    padding: 5px;
+    width: 750px !important;  /* Increase width for 3 columns */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    box-sizing: border-box;
+    z-index: 9999;
+    margin-left:-325px !important;
+
+    /* FIX the cutoff issue */
+    overflow: visible !important;
+}
+
+/* Show menu on hover */
+.core-services-menu:hover > ul {
+    display: grid !important;
+}
+
+/* Prevent text clipping */
+.core-services-menu ul li a {
+    color: #fff !important;
+    white-space: normal !important;
+    line-height: 1.4;
+    display: block;
+}
+
