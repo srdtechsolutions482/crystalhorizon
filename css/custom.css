@@ -57,6 +57,7 @@
 	--default-font				: "DM Sans", serif;
 	--accent-font				: "Poppins", serif;
 	--lavender : #F4ECFC;
+	--light-gray :#f9f9f9;
 }
 
 /************************************/
@@ -390,13 +391,13 @@ body{
 .section-title h1{
 	font-size: 60px;
 	margin-bottom: 0;
-	cursor: none;
+	
 }
 
 .section-title h2{
 	font-size: 46px;
 	margin-bottom: 0;
-	cursor: none;
+	
 }
 
 .section-title h2 span{
@@ -554,7 +555,7 @@ body{
 
 header.main-header{
 	position: relative;
-	background-color: var(--lavender);
+	background-color: var(--light-gray);
 	z-index: 100;
 }
 
@@ -824,7 +825,7 @@ header.main-header .header-sticky.active{
 	background: url(../images/hero1.png) no-repeat;
 	background-position: center center;
 	background-size: cover;
-	padding: 120px 0;
+	padding: 300px 0;
 }
 
 .hero::before{
