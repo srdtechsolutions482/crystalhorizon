@@ -191,7 +191,7 @@
                             </div>
                             <!-- FAQ Item End -->
                             <!-- FAQ Item Start -->
-                            <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
+                            <div id="cmdb-strategy" class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
                                 <h2 class="accordion-header" id="faqheading2">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqcollapse2" aria-expanded="false" aria-controls="faqcollapse2">
                                         Configuration Management & CMDB Strategy
@@ -212,7 +212,7 @@
                             </div>
                             <!-- FAQ Item End -->
                             <!-- FAQ Item Start -->
-                            <div class="accordion-item wow fadeInUp" data-wow-delay="0.4s">
+                            <div id="itsm-process" class="accordion-item wow fadeInUp" data-wow-delay="0.4s">
                                 <h2 class="accordion-header" id="faqheading3">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqcollapse3" aria-expanded="false" aria-controls="faqcollapse3">
                                         ITSM Process Design & Implementation
@@ -234,7 +234,7 @@
                             </div>
                             <!-- FAQ Item End -->
                             <!-- FAQ Item Start -->
-                            <div class="accordion-item wow fadeInUp" data-wow-delay="0.6s">
+                            <div id="discovery-integration" class="accordion-item wow fadeInUp" data-wow-delay="0.6s">
                                 <h2 class="accordion-header" id="faqheading4">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqfaqcollapse1" aria-expanded="false" aria-controls="faqfaqcollapse1">
                                         Discovery & Integration Architecture
@@ -255,7 +255,7 @@
                             </div>
                             <!-- FAQ Item End -->
                             <!-- FAQ Item Start -->
-                            <div class="accordion-item wow fadeInUp" data-wow-delay="0.8s">
+                            <div id="data-governance" class="accordion-item wow fadeInUp" data-wow-delay="0.8s">
                                 <h2 class="accordion-header" id="faqheading5">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqfaqcollapse2" aria-expanded="false" aria-controls="faqfaqcollapse2">
                                         Data Governance & Quality Assurance
@@ -276,7 +276,7 @@
                             </div>
                             <!-- FAQ Item End -->
                             <!-- FAQ Item Start -->
-                            <div class="accordion-item wow fadeInUp" data-wow-delay="0.8s">
+                            <div id="business-intelligence" class="accordion-item wow fadeInUp" data-wow-delay="0.8s">
                                 <h2 class="accordion-header" id="faqheading6">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqfaqcollapse3" aria-expanded="false" aria-controls="faqfaqcollapse2">
                                         Insights & Business Intelligence from IT Estate
@@ -597,13 +597,14 @@
                     </div>
                     <!-- Footer Links End -->
                 </div>
-
+<div class="col-lg-4 col-md-3 col-7">
+                  <img src="images/logo.png" alt="" class="w-75"></div>
                 <div class="col-lg-12">
                     <!-- Footer Privacy Policy Start -->
                     <div class="footer-privacy-policy">
                         <!-- Footer Logo Start -->
                         <div class="footer-logo">
-                            <img src="images/logo.png" alt="">
+                            <!-- <img src="images/logo.png" alt=""> -->
                         </div>
                     </div>
                         <!-- Footer Logo End -->
@@ -692,6 +693,42 @@
                 });
         });
     </script>
+
+    <script>
+function openAccordionFromHash() {
+    const hash = window.location.hash;
+    if (!hash) return;
+
+    const accordionItem = document.querySelector(hash);
+    if (!accordionItem) return;
+
+    const collapseElement = accordionItem.querySelector(".accordion-collapse");
+
+    if (!collapseElement) return;
+
+    // Close any open panels
+    document.querySelectorAll(".accordion-collapse.show").forEach(el => {
+        new bootstrap.Collapse(el, { toggle: false }); // close safely
+    });
+
+    // Open the selected one
+    new bootstrap.Collapse(collapseElement, { toggle: true });
+
+    // Scroll into view after animation delay
+    setTimeout(() => {
+        accordionItem.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 300);
+}
+
+// Run on page load
+document.addEventListener("DOMContentLoaded", openAccordionFromHash);
+
+// Run when URL hash changes (user clicks submenu inside same page)
+window.addEventListener("hashchange", openAccordionFromHash);
+</script>
+
+
+
 </body>
 
 </html>
