@@ -6606,3 +6606,22 @@ header.main-header .header-sticky.active{
     display: block;
 }
 
+/* Desktop default */
+.navbar-brand img {
+    max-width: 220px; /* looks good for your style */
+    height: auto;
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+    .navbar-brand img {
+        max-width: 175px !important; /* Increase logo size on mobile */
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .navbar-brand img {
+        max-width: 140px !important; 
+    }
+}
